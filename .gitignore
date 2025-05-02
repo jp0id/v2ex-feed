@@ -1,0 +1,62 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Distribution / packaging
+*.egg-info/
+*.dist-info/
+build/
+dist/
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# SQLite / Database
+*.db
+*.db-wal
+*.db-shm
+
+# Logs
+logs/
+*.log
+
+# Environment settings
+.env
+.python-version
+
+# IDEs / Editors
+.vscode/
+.idea/
+
+# Docker
+*.pid
+*.tar
+*.gz
+*.bak
+Dockerfile~
+docker-compose.override.yml
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.pytest_cache/
+.cache/
+
+# macOS
+.DS_Store
+
+# PyInstaller
+*.spec

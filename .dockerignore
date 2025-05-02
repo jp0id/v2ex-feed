@@ -1,0 +1,56 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment and config
+.env
+.python-version
+*.egg-info/
+*.dist-info/
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Logs and temp files
+logs/
+*.log
+
+# Docker files
+*.pid
+*.tar
+*.gz
+*.bak
+Dockerfile~
+docker-compose.override.yml
+
+# Tests / coverage
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+.pytest_cache/
+.cache/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+build/
+dist/
+.eggs/
+
+# macOS system files
+.DS_Store
