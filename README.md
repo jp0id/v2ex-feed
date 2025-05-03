@@ -2,7 +2,7 @@
     <img src="docs/images/logo.png" alt="logo" style="height: 150px; width:150px;"/>
 </p>
 
-<h1 align="center">v2ex feed</h1>
+<h1 align="center">V2EX Feed</h1>
 
 <div align="center">
 
@@ -15,21 +15,21 @@
 
 </div>
 
-v2ex-feed 是一个自动同步 V2EX 最新帖子的小工具，它会抓取内容并优化展示格式，然后推送到你的 Telegram，让你无需频繁刷新网页，也能第一时间掌握社区动态。
+V2EX Feed 是一个自动同步 V2EX 最新帖子的小工具，它会抓取内容并优化展示格式，然后推送到你的 Telegram，让你无需频繁刷新网页，也能第一时间掌握社区动态。
 
-我们关注的不只是速度，还有阅读体验。通过结构化提取帖子中的标题、内容、作者、节点、发布时间等关键信息，v2ex-feed 能有效剔除干扰内容，让你在 Telegram 上也能看到简洁清爽、重点突出的内容。
+我们关注的不只是速度，还有阅读体验。通过结构化提取帖子中的标题、内容、作者、节点、发布时间等关键信息，V2EX Feed 都能有效剔除干扰内容，让你在 Telegram 上也能看到简洁清爽的内容。
 
-这个项目的目标是打造一个简单、直接、高效的 V2EX 阅读通道。无论你是 V2EX 的重度用户，还是只是想不错过最新的帖子，v2ex-feed 都能帮你更快、更轻松地获取信息。
+这个项目的目标是做一个简单、直接、高效的 V2EX 阅读及沟通频道。无论你是 V2EX 的重度用户，还是只是不想错过最新的帖子，V2EX Feed 都能帮你更快、更轻松地获取信息。
 
 
 ## 📡 订阅频道
 
-想看看效果？欢迎直接关注我们的 Telegram 频道 👉 [@v2exfeed](https://t.me/v2exfeed) ，最新帖子实时推送，马上体验！
+想看看效果？欢迎订阅我们的 Telegram 频道 👉 [@v2exfeed](https://t.me/v2exfeed) ，及时查看最新的推送内容，赶快马上体验吧！
 
 ## 🚀 快速开始
 
-- 使用 **Docker + Docker Compose** 进行快速部署，适用于本地开发与服务器运行
-- 使用 `.env` 管理配置，敏感信息（如 Bot Token）不会硬编码在源码中
+- 项目使用 **Docker + Docker Compose** 进行快速部署，适用于本地开发与服务器运行
+- 项目使用 `.env` 管理配置，敏感信息（如 Bot Token）不会硬编码在源码中
 - 提供 CLI 启动入口：`v2ex-feed`，支持定制化运行参数
 
 ### 1. 克隆仓库
@@ -60,7 +60,7 @@ TELEGRAM_CHAT_ID=@your_channel
 
 ### 3. 运行方式
 
-#### ✅ 使用 Docker（推荐）
+#### 🐳 使用 Docker（推荐 ✅）
 
 ```bash
 
@@ -82,28 +82,27 @@ uv pip install .
 uv run v2ex-feed  # 启动 CLI
 ```
 
-## ⚙️ 技术栈与实现
+## ⚙️ 技术栈
 
-基于 Python 3.13 构建，采用现代异步编程模型，结合 Telegram Bot 和 RSS 内容处理，通过任务队列与后台异步 worker 实现高效、稳定的信息推送流程。项目内置速率限制与自动重试机制，支持长时间运行和高并发处理，适合部署在服务器或容器环境中。
+项目基于 Python 3.13 构建，采用异步编程模型，结合 Telegram Bot 和 RSS 内容处理，通过任务队列与后台异步 worker 实现高效、稳定的信息推送流程。项目内置速率限制与自动重试机制，支持长时间运行和高并发处理，适合部署在服务器或容器环境中。
 
 ### 核心依赖与功能模块
 
-|      技术 / 库      | 作用说明                             |
-| :-----------------: | :----------------------------------- |
-|         uv          | 替代 pip + venv 的极速依赖管理工具   |
-|       aiohttp       | 异步 HTTP 客户端，抓取 V2EX RSS 数据 |
-|     aiolimiter      | 异步速率限制器，防止过频抓取或被封   |
-|     feedparser      | RSS 解析库，提取帖子信息             |
-|   html-sanitizer    | 清洗富文本内容，适配 Telegram 展示   |
-|    tortoise-orm     | 异步 ORM，管理 SQLite 数据持久化     |
-|      aiosqlite      | 异步数据库驱动，适配 Tortoise ORM    |
-|     apscheduler     | 定时任务调度器，定期抓取并推送新内容 |
-| python-telegram-bot | 操作 Telegram Bot 接口               |
-|      pydantic       | 数据模型与校验，提升代码健壮性       |
-|  pydantic-settings  | 管理 `.env` 配置文件与运行参数       |
-|      tenacity       | 自动重试机制，提升抓取与推送稳定性   |
-|       loguru        | 结构化日志输出，方便调试与监控       |
-|        typer        | 快速构建命令行工具（CLI）            |
+| 技术 / 库             | 作用说明                             |
+| :-------------------- | :----------------------------------- |
+| uv                    | 替代 pip + venv 的极速依赖管理工具   |
+| aiohttp               | 异步 HTTP 客户端，抓取 V2EX RSS 数据 |
+| aiolimiter            | 异步速率限制器，防止过频发送或被封   |
+| feedparser            | RSS 解析库，提取帖子信息             |
+| beautifulsoup4 & lxml | 清洗富文本内容，适配 Telegram 展示   |
+| tortoise-orm          | 异步 ORM，管理 SQLite 数据持久化     |
+| aiosqlite             | 异步数据库驱动，适配 Tortoise ORM    |
+| apscheduler           | 定时任务调度器，定期抓取并推送新内容 |
+| python-telegram-bot   | 操作 Telegram Bot 接口               |
+| pydantic-settings     | 管理配置文件与运行参数               |
+| tenacity              | 自动重试机制，提升抓取与推送稳定性   |
+| loguru                | 结构化日志输出，方便调试与监控       |
+| typer                 | 快速构建命令行工具（CLI）            |
 
 ## 🗂️ 项目结构
 
@@ -128,17 +127,18 @@ src/v2ex_feed/
 1. 新建功能分支：`git checkout -b feature/your-feature-name`  
 2. 提交修改：`git commit -m 'feat: 添加你的功能说明'`  
 3. 推送到远程仓库：`git push origin feature/your-feature-name`  
-4. 在 GitHub 上发起 Pull Request，我们会尽快审核
+4. 在 GitHub 上发起 Pull Request，我会尽快审核
 
 📌 **提交信息请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/v1.0.0/) 格式**，例如：
 
 - `feat: 添加新功能`
 - `fix: 修复内容解析错误`
 - `docs: 更新使用文档`
+- ...
 
 这样可以帮助我们更好地管理项目历史与版本变更。
 
-感谢你的贡献 🙌
+感谢您的贡献 🙌
 
 ## 👥 贡献者
 
