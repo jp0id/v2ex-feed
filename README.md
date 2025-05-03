@@ -1,21 +1,25 @@
 <p align="center">
-    <img src="docs/assets/logo.png" alt="logo" style="height: 150px; width:150px;"/>
+  <img src="docs/assets/logo.png" alt="logo" width="150" height="150"/>
 </p>
 
 <h1 align="center">V2EX Feed</h1>
+<p align="center"><i>一个用于抓取 V2EX 最新帖子并推送到 Telegram 的轻量工具</i></p>
 
 <div align="center">
 
-![GitHub repo size](https://img.shields.io/github/repo-size/jackhawks/v2ex-feed)
-![GitHub license](https://img.shields.io/github/license/jackhawks/v2ex-feed)
-![GitHub stars](https://img.shields.io/github/stars/jackhawks/v2ex-feed?style=social)
-![GitHub forks](https://img.shields.io/github/forks/jackhawks/v2ex-feed?style=social)
-![GitHub issues](https://img.shields.io/github/issues/jackhawks/v2ex-feed)
-![Python version](https://img.shields.io/badge/python-3.13%2B-blue)
+  <!-- 项目信息 -->
+  <img src="https://img.shields.io/github/repo-size/jackhawks/v2ex-feed" alt="Repo size" />
+  <img src="https://img.shields.io/github/license/jackhawks/v2ex-feed" alt="License" />
+  <img src="https://img.shields.io/badge/python-3.13%2B-blue" alt="Python version" />
+
+  <!-- 社交统计 -->
+  <img src="https://img.shields.io/github/stars/jackhawks/v2ex-feed?style=social" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/jackhawks/v2ex-feed?style=social" alt="Forks" />
+  <img src="https://img.shields.io/github/issues/jackhawks/v2ex-feed" alt="Issues" />
 
 </div>
 
-V2EX Feed 是一个自动同步 V2EX 最新帖子的小工具，它会抓取内容并优化展示格式，然后推送到你的 Telegram，让你无需频繁刷新网页，也能第一时间掌握社区动态。
+V2EX Feed 是一个自动同步 V2EX 最新帖子的轻量工具，它会抓取内容并优化展示格式，然后推送到你的 Telegram，让你无需频繁刷新网页，也能第一时间掌握社区动态。
 
 我们关注的不只是速度，还有阅读体验。通过结构化提取帖子中的标题、内容、作者、节点、发布时间等关键信息，V2EX Feed 都能有效剔除干扰内容，让你在 Telegram 上也能看到简洁清爽的内容。
 
