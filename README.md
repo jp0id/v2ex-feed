@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="docs/images/logo.png" alt="logo" style="height: 150px; width:150px;"/>
+    <img src="docs/assets/logo.png" alt="logo" style="height: 150px; width:150px;"/>
 </p>
 
 <h1 align="center">V2EX Feed</h1>
