@@ -17,7 +17,6 @@ from tenacity import (
 )
 
 from v2ex_feed.settings import settings
-from v2ex_feed.telegram_html_formatter import html_to_telegram
 
 TIMEZONE = settings.TIMEZONE
 SHANGHAI_TZ = tz.gettz(TIMEZONE)
@@ -54,7 +53,14 @@ class PostPayload:
         header = f"<b>{html.escape(self.title)}</b>"
         body = self.content if self.content else '[此贴没有内容～]'
         author_line = f'👤 <a href="{self.author_uri}">{html.escape(self.author_name)}</a>' if self.author_name else None
-        node_line = f"🏷️ {self.node_name}" if self.node_name else None
+
+        if self.node_name:
+            raw = "".join(self.node_name.split()).replace("#", "")
+            tag = html.escape(raw).strip()
+            node_line = f"🏷️ #{tag}{settings.TELEGRAM_CHAT_USERNAME}"
+        else:
+            node_line = None
+
         time_line = f"🕒 {self._fmt_published()}" if self.published else None
         link_line = f'🔗 <a href="{self.link}">阅读原帖</a>' if self.link else None
 
