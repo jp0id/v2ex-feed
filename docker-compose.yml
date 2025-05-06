@@ -1,8 +1,6 @@
 services:
   v2ex-feed:
-    build:
-      context: .
-    image: v2ex-feed
+    image: jp0id/v2ex-feed:latest
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
