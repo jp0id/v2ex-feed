@@ -92,12 +92,7 @@ async def _safe_send(payload: PostPayload) -> None:
                 chat_id=settings.TELEGRAM_CHAT_ID,
                 text=payload.to_html(),
                 parse_mode=constants.ParseMode.HTML,
-                link_preview_options=LinkPreviewOptions(
-                    is_disabled=False,
-                    url=payload.link,
-                    prefer_small_media=True,
-                    show_above_text=False
-                )
+                link_preview_options=LinkPreviewOptions(is_disabled=True)
             )
             logger.debug("Telegram 推送成功")
         except RetryAfter as e:
