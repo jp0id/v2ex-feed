@@ -28,7 +28,7 @@ V2EX Feed 是一个自动同步 V2EX 最新帖子的轻量工具，它会抓取�
 
 ## 📡 订阅频道
 
-想看看效果？欢迎订阅我们的 Telegram 频道 👉 [@v2exfeed](https://t.me/v2exfeed) ，及时查看最新的推送内容，赶快马上体验吧！
+想看看效果？欢迎订阅我们的 Telegram 频道 👉 [@v2exfeed](https://t.me/v2ex_feed) ，及时查看最新的推送内容，赶快马上体验吧！
 
 ## 🚀 快速开始
 
