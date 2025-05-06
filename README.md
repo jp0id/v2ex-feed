@@ -157,7 +157,7 @@ src/v2ex_feed/
 
 ## ⭐ Star 历史
 
-[![Star History Chart](https://starchart.cc/jackhawks/v2ex-feed.svg)](https://starchart.cc/jackhawks/v2ex-feed)
+[![Stargazers over time](https://starchart.cc/jackhawks/v2ex-feed.svg?variant=adaptive)](https://starchart.cc/jackhawks/v2ex-feed)
 
 ## 🔒 License
 
