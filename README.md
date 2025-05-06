@@ -68,7 +68,7 @@ TELEGRAM_CHAT_ID=@your_channel
 
 ```bash
 
-docker compose up --build -d
+docker-compose up -d
 ```
 
 #### 🐍 本地运行（需 Python 3.13+）
