@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     # === Worker ===
     WORKER_NUM: int = 1
 
-    TELEGRAM_CHAT_USERNAME: str = "@v2exfeed"
+    TELEGRAM_CHAT_USERNAME: str = "@v2ex_feed"
 
     # Pydantic v2 的配置写在 model_config 里
     model_config = SettingsConfigDict(
