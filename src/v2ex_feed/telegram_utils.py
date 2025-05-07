@@ -17,7 +17,6 @@ from tenacity import (
 )
 
 from v2ex_feed.settings import settings
-from v2ex_feed.telegram_html_formatter import html_to_telegram
 
 TIMEZONE = settings.TIMEZONE
 SHANGHAI_TZ = tz.gettz(TIMEZONE)
@@ -38,7 +37,7 @@ class PostPayload:
 
     def _fmt_published(self) -> Optional[str]:
         """
-        把发布时间统一格式化成本地时区字符串
+        把发布时间统一格式化成本地时区字符串，并附加周几
         """
         if not self.published:
             return None
@@ -46,15 +45,32 @@ class PostPayload:
         if dt.tzinfo is None:
             dt = dt.replace(tzinfo=tz.UTC)
         local_dt = dt.astimezone(SHANGHAI_TZ)
-        return local_dt.strftime("%Y-%m-%d %H:%M:%S")
+        # 定义中文周映射：Monday=0
+        weekdays = ["一", "二", "三", "四", "五", "六", "日"]
+        weekday = weekdays[local_dt.weekday()]
+        # 返回格式：YYYY-MM-DD HH:MM:SS 周X
+        return local_dt.strftime("%Y-%m-%d %H:%M:%S") + f" 周{weekday}"
 
     def to_html(self) -> str:
         """渲染成 Telegram HTML 消息（parse_mode='HTML'）"""
 
         header = f"<b>{html.escape(self.title)}</b>"
-        body = self.content if self.content else '[此贴没有内容～]'
+
+        body = (
+            f"<blockquote expandable>{self.content}</blockquote>"
+            if self.content else
+            '<blockquote expandable>[此贴没有内容～]</blockquote>'
+        )
+
         author_line = f'👤 <a href="{self.author_uri}">{html.escape(self.author_name)}</a>' if self.author_name else None
-        node_line = f"🏷️ {self.node_name}" if self.node_name else None
+
+        if self.node_name:
+            raw = "".join(self.node_name.split()).replace("#", "")
+            tag = html.escape(raw).strip()
+            node_line = f"🏷️ #{tag}{settings.TELEGRAM_CHAT_USERNAME}"
+        else:
+            node_line = None
+
         time_line = f"🕒 {self._fmt_published()}" if self.published else None
         link_line = f'🔗 <a href="{self.link}">阅读原帖</a>' if self.link else None
 
