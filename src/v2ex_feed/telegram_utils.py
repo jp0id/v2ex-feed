@@ -88,7 +88,9 @@ class PostPayload:
         return "\n".join(p for p in parts if p is not None)
 
 
-bot = Bot(settings.TELEGRAM_BOT_TOKEN)
+bot = Bot(settings.TELEGRAM_BOT_TOKEN,
+          base_url="http://47.243.197.2:8081/bot",
+          base_file_url="http://47.243.197.2:8081/file/bot")
 
 limiter_fast = AsyncLimiter(1, 3)  # 每 3 s 1 条
 limiter_minute = AsyncLimiter(20, 60)  # 每 60 s 20 条
