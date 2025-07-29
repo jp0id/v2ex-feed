@@ -8,14 +8,14 @@
 <div align="center">
 
   <!-- 项目信息 -->
-  <img src="https://img.shields.io/github/repo-size/Jv0id/v2ex-feed" alt="Repo size" />
-  <img src="https://img.shields.io/github/license/Jv0id/v2ex-feed" alt="License" />
+  <img src="https://img.shields.io/github/repo-size/jp0id/v2ex-feed" alt="Repo size" />
+  <img src="https://img.shields.io/github/license/jp0id/v2ex-feed" alt="License" />
   <img src="https://img.shields.io/badge/python-3.13%2B-blue" alt="Python version" />
 
   <!-- 社交统计 -->
-  <img src="https://img.shields.io/github/stars/Jv0id/v2ex-feed?style=social" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/Jv0id/v2ex-feed?style=social" alt="Forks" />
-  <img src="https://img.shields.io/github/issues/Jv0id/v2ex-feed" alt="Issues" />
+  <img src="https://img.shields.io/github/stars/jp0id/v2ex-feed?style=social" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/jp0id/v2ex-feed?style=social" alt="Forks" />
+  <img src="https://img.shields.io/github/issues/jp0id/v2ex-feed" alt="Issues" />
 
 </div>
 
@@ -28,7 +28,7 @@ V2EX Feed 是一个自动同步 V2EX 最新帖子的轻量工具，它会抓取�
 
 ## 📡 订阅频道
 
-想看看效果？欢迎订阅我们的 Telegram 频道 👉 [@v2exfeed](https://t.me/v2ex_feed) ，及时查看最新的推送内容，赶快马上体验吧！
+想看看效果？欢迎订阅我们的 Telegram 频道 👉 [@v2ex_feed](https://t.me/v2ex_feed) ，及时查看最新的推送内容，赶快马上体验吧！
 
 ## 🚀 快速开始
 
@@ -39,7 +39,7 @@ V2EX Feed 是一个自动同步 V2EX 最新帖子的轻量工具，它会抓取�
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/Jv0id/v2ex-feed.git
+git clone https://github.com/jp0id/v2ex-feed.git
 cd v2ex-feed
 ```
 
@@ -146,7 +146,7 @@ src/v2ex_feed/
 
 ## 👥 贡献者
 
-<a href="https://github.com/Jv0id/v2ex-feed/graphs/contributors">
+<a href="https://github.com/jp0id/v2ex-feed/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=jackhawks/v2ex-feed" />
 </a>
 
@@ -157,7 +157,7 @@ src/v2ex_feed/
 
 ## ⭐ Star 历史
 
-[![Stargazers over time](https://starchart.cc/Jv0id/v2ex-feed.svg?variant=adaptive)](https://starchart.cc/Jv0id/v2ex-feed)
+[![Stargazers over time](https://starchart.cc/jp0id/v2ex-feed.svg?variant=adaptive)](https://starchart.cc/jp0id/v2ex-feed)
 
 ## 🔒 License
 
