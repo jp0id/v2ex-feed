@@ -19,6 +19,7 @@ from tenacity import (
 from v2ex_feed.settings import settings
 
 TIMEZONE = settings.TIMEZONE
+TELEGRAM_BASE_URL = settings.TELEGRAM_BASE_URL
 SHANGHAI_TZ = tz.gettz(TIMEZONE)
 
 
@@ -89,8 +90,8 @@ class PostPayload:
 
 
 bot = Bot(settings.TELEGRAM_BOT_TOKEN,
-          base_url="http://47.243.197.2:8081/bot",
-          base_file_url="http://47.243.197.2:8081/file/bot")
+          base_url="f{TELEGRAM_BASE_URL}/bot",
+          base_file_url="f{TELEGRAM_BASE_URL}/file/bot")
 
 limiter_fast = AsyncLimiter(1, 3)  # 每 3 s 1 条
 limiter_minute = AsyncLimiter(20, 60)  # 每 60 s 20 条
