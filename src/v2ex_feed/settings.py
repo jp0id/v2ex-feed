@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     # === Telegram ===
     TELEGRAM_BOT_TOKEN: str
     TELEGRAM_CHAT_ID: str
+    TELEGRAM_BASE_URL: str = "https://api.telegram.org"
 
     # === Worker ===
     WORKER_NUM: int = 1
