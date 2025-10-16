@@ -16,7 +16,7 @@ from tenacity import (
     wait_exponential_jitter,
 )
 
-from v2ex_feed.settings import settings
+from settings import settings
 
 TIMEZONE = settings.TIMEZONE
 TELEGRAM_BASE_URL = settings.TELEGRAM_BASE_URL

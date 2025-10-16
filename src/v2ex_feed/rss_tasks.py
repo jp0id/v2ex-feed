@@ -1,4 +1,6 @@
 # v2ex_feed/rss_tasks.py
+from __future__ import annotations
+
 import re
 from datetime import datetime
 from urllib.parse import urlparse
@@ -10,11 +12,11 @@ from dateutil import parser as date_parser, tz
 from loguru import logger
 from tortoise.transactions import atomic
 
-from v2ex_feed.models import Post
-from v2ex_feed.queueing import send_queue  # ★ 新：异步发送队列
-from v2ex_feed.settings import settings
-from v2ex_feed.telegram_html_formatter import html_to_telegram
-from v2ex_feed.telegram_utils import PostPayload  # 仍需数据类
+from models import Post
+from queueing import send_queue  # ★ 新：异步发送队列
+from settings import settings
+from telegram_html_formatter import html_to_telegram
+from telegram_utils import PostPayload  # 仍需数据类
 
 # ---------- 常量 ----------
 TIMEZONE = settings.TIMEZONE

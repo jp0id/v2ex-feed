@@ -3,11 +3,11 @@ import asyncio
 
 from loguru import logger
 
-from v2ex_feed.logger_cfg import init_logger
-from v2ex_feed.models import init_db
-from v2ex_feed.queueing import send_worker, send_queue
-from v2ex_feed.rss_tasks import start_scheduler
-from v2ex_feed.settings import settings
+from logger_cfg import init_logger
+from models import init_db
+from queueing import send_worker, send_queue
+from rss_tasks import start_scheduler
+from settings import settings
 
 
 async def main() -> None:
