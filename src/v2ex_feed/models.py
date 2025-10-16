@@ -1,7 +1,7 @@
 from pathlib import Path
 from tortoise import Tortoise, fields
 from tortoise.models import Model
-from settings import settings
+from v2ex_feed.settings import settings
 
 
 class Post(Model):

@@ -3,7 +3,7 @@ import asyncio
 
 from loguru import logger
 
-from telegram_utils import send_post, limiter_fast, limiter_minute
+from v2ex_feed.telegram_utils import send_post, limiter_fast, limiter_minute
 
 #: 全局异步队列，容量 1000 足够
 send_queue: asyncio.Queue = asyncio.Queue(maxsize=1000)
