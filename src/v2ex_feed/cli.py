@@ -1,6 +1,6 @@
 # cli.py
 import asyncio, typer
-from v2ex_feed.main import main as run_bot
+from main import main as run_bot
 
 app = typer.Typer()
 
