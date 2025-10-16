@@ -107,8 +107,6 @@ async def _safe_send(payload: PostPayload) -> None:
     """真正与 Telegram API 交互，附带限流 + Flood 控制"""
     async with limiter_fast, limiter_minute:
         try:
-            logger.info(f"bot base url: {bot.base_url}")
-            logger.info(f"bot base file url: {bot.base_file_url}")
             await bot.send_message(
                 chat_id=settings.TELEGRAM_CHAT_ID,
                 text=payload.to_html(),
