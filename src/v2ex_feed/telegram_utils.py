@@ -90,8 +90,8 @@ class PostPayload:
 
 
 bot = Bot(settings.TELEGRAM_BOT_TOKEN,
-          base_url="f{TELEGRAM_BASE_URL}/bot",
-          base_file_url="f{TELEGRAM_BASE_URL}/file/bot")
+          base_url="https://api.telegram.org/bot",
+          base_file_url="https://api.telegram.org/file/bot")
 
 limiter_fast = AsyncLimiter(1, 3)  # 每 3 s 1 条
 limiter_minute = AsyncLimiter(20, 60)  # 每 60 s 20 条
